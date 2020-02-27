@@ -1,0 +1,47 @@
+p, ul
+{
+	text-align: justify;
+	font-size: 20px;
+}
+img
+{
+	width: 500px;
+	height: 200px;
+}
+div
+{
+	border-style: solid;
+	height: 260px;
+}
+.alignLeft
+{
+	float:left;
+	margin: 15px 0px 0px 15px;
+}
+.alignRight
+{
+	float:right;
+	height: 50px;
+	width: 250px;
+	margin: 0px 20px 15px 0px;
+}
+h3
+{
+	font-size: 50px;
+}
+button
+{
+	font-size: 20px;
+	border-radius: 10px;
+}
+h1, h2
+{
+	font-size: 60px;
+	text-align: center;
+}
+.gbaf
+{
+	font-size: 25px;
+}
+
+

@@ -1,0 +1,22 @@
+h2
+{
+	font-size: 50px;
+	margin-left: 60px;
+}
+.contenu
+{
+	font-size: 30px;
+	margin-left: 60px;
+}
+img.pouce
+{
+	width: 50px;
+	height: 50px;
+}
+.like
+{
+	border-style: solid;
+	padding-left: 10px;
+	margin-left: 89%;
+	margin-right: 2%;
+}
