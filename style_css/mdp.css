@@ -1,0 +1,71 @@
+.logo
+{
+	width: 8%;
+	height: 10%;
+	float: left;
+	padding-left: 33%;
+	padding-bottom: 20px;
+	margin-right: 20px;	
+}
+h1
+{
+	font-size: 50px;
+}
+.form
+{
+	border-style: solid;
+	border-right-width: 0px;
+	border-left-width: 0px;
+	text-align: center;	
+	padding-top: 50px;
+	margin-bottom: 35px;
+}
+.formlabel 
+{
+font-size: 30px;
+font-style: italic;
+}
+.form input[type=submit]
+{
+	background-color: #70afee;
+	border-radius: 10px;
+	padding: 10px 50px 10px 50px;
+	font-size: 20px;
+	margin-bottom: 25px;
+	margin-top: 10px;
+}
+.forminput
+{
+	border: 2px solid #d8b900;
+	border-radius: 10px;
+	width: 50%;
+	padding: 10px 0px 10px 20px;
+	margin-bottom: 20px;
+}
+.lien
+{
+	font-size: 20px;
+	margin-bottom: 50px;
+}
+.clear
+{
+	clear: both;
+}
+@media screen and (max-width: 1280px)
+{
+    .logo
+	{
+		width: 30%;
+		height: 40%;
+		padding-left: 33%;
+		padding-top: 50px;
+		margin-right: 20px;		
+	}
+	h1
+	{
+		font-size: 50px;
+		margin-top: 40%;
+		text-align: center;
+		margin-bottom: 10%;
+	}
+}
