@@ -1,0 +1,84 @@
+/* présentation partenaire */
+img.logo
+{
+	display: block;
+	margin: 0 auto;
+	width: 40%;
+	height: 20%;
+}
+
+h2
+{
+	font-size: 60px;
+	margin-left: 70px;
+}
+
+.description
+{
+	font-size: 25px;
+	margin-left: 70px;
+	margin-bottom: 100px;
+}
+
+/* titre - bouton commentaire - likes,dislikes */
+
+.like
+{
+	border-style: solid;
+	padding-left: 10px;
+	float: right;
+	margin-left: 20px;
+	margin-right: 50px;
+}
+img.pouce
+{
+	width: 50px;
+	height: 50px;
+}
+
+.bouton
+{
+	float: right;
+}
+
+.boutoncom
+{
+	width: 200px;
+	height: 60px;
+	text-align: right;
+	font-size: 17px;
+	border-radius: 20px;
+}
+
+h3
+{
+ text-align: left;
+ font-size: 60px;
+ margin-left: 70px;
+}
+
+/* Commentaires */
+
+.commentaire
+{
+	border: 2px solid black;
+	margin: 0px 50px 20px 50px;
+	padding-left: 20px;
+	border-radius: 20px;
+}
+
+.nom
+{
+	font-size: 25px;
+	
+}
+
+.com
+{
+	font-size: 20px;
+}
+
+.clear
+{
+	clear: both;
+}
