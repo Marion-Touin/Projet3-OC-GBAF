@@ -1,4 +1,40 @@
-h3
+.form
 {
-	font-size: 65px;
+	 text-align: center;
+	 padding-top: 100px;
+}
+
+.forminput
+{
+	width: 60%;
+	height: 8%;
+	margin-left: 60px;
+	font-size: 20px;
+	text-align: center;
+	border: 2px solid #d8b900;
+	border-radius: 10px;
+}
+.formtext
+{
+	width: 60%;
+	height: 20%;
+	margin-left: 60px;
+	border: 2px solid #d8b900;
+	border-radius: 10px;
+}
+.formbouton
+{
+	width: 20%;
+	height: 5%;
+	margin-left: 60px;
+	border-radius: 100px;
+	border: 2px solid #d8b900;
+	background-color: #70afee;
+}
+
+.prenom
+{
+	text-align: center;
+	font-size: 35px;
+	font-style: italic;
 }
