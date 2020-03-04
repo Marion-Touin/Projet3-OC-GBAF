@@ -1,7 +1,7 @@
 <?php
-	// connexion à la base de données
-    require_once('inc/connec.php');
-    require_once('inc/header.php'); 
+// connexion à la base de données
+require_once('inc/connec.php');
+require_once('inc/header.php'); 
 ?>
 <!DOCTYPE html>
 <html lang="fr">
