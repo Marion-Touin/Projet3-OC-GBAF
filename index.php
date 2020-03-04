@@ -16,12 +16,12 @@ require_once('inc/connec.php');
     {
       $pagebis = 1;
     }
-  $depart = ($pagebis-1)*$articleparpage;
+      $depart = ($pagebis-1)*$articleparpage;
 
-// récupération tous les articles
-$req = $bdd->query('SELECT id, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr FROM articles ORDER BY date_creation DESC LIMIT '.$depart.','.$articleparpage);
+      // récupération tous les articles
+      $req = $bdd->query('SELECT id, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr FROM articles ORDER BY date_creation DESC LIMIT '.$depart.','.$articleparpage);
 
-while ($donnees = $req->fetch())
+      while ($donnees = $req->fetch())
 {
 ?>
 <!DOCTYPE html>
@@ -30,20 +30,17 @@ while ($donnees = $req->fetch())
         <meta charset="utf-8" />
         <title>Articles</title>
     <link href="style.css" rel="stylesheet" /> 
-    </head>
-        
+    </head>        
     <body>
-<div class="news">
-    <h3>
-      <!-- On affiche l'article -->
-      <img src="miniatures/<?= $donnees['id'] ?>.png" width="100" /> <br/>
+      <div class="news">
+        <h1>
+        <!-- On affiche l'article -->
+        <img src="miniatures/<?= $donnees['id'] ?>.png" width="100" /> <br/>
         <?= $donnees['titre']; ?>
-    </h3>
-    <?= $donnees['contenu']; ?>
-    <br/>
-    <li><a href="partenaires.php?id=<?php echo $donnees['id']; ?>">Commentaires</a></li>
-    </p>
-</div>
+        </h1>
+        <?= $donnees['contenu']; ?> <br/>
+        <li><a href="partenaires.php?id=<?php echo $donnees['id']; ?>">Commentaires</a></li>
+      </div>
 
 <!--pagination -->
 <?php
@@ -59,5 +56,5 @@ while ($donnees = $req->fetch())
 } // Fin de la boucle des billets
 $req->closeCursor();
 ?>
-</body>
+    </body>
 </html>
