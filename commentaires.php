@@ -2,43 +2,6 @@
 require_once('inc/connec.php');
 require_once('inc/header.php'); 
 
-
-if(isset($_SESSION['id']) && !empty($_SESSION['id']))
-{ 
-    $reqmember = $bdd->prepare("SELECT * FROM membres WHERE id = ? ");
-    $reqmember->execute(array($_SESSION['id'])); 
-    $memberinfo = $reqmember->fetch();
-
-    //insère le commentaire
-    if(isset($_POST['submit_commentaire']))
-    {
-        
-        $_POST['id_user'] = $_SESSION['id'];
-        $_POST['prenom'] = $_SESSION['prenom'];
-        if(isset($_POST['prenom'], $_POST['commentaire'])) 
-        {
-            if(!empty($_POST['prenom']) AND !empty($_POST['commentaire'])) 
-            {
-                $prenom = htmlspecialchars($_POST['prenom']);
-                $commentaire = htmlspecialchars($_POST['commentaire']);
-
-                $inscommentaires = $bdd->prepare('INSERT INTO commentaires(id_article, id_user, prenom, commentaire, date_publi) VALUES (?, ?, ?, ?, NOW())');
-                $inscommentaires->execute(array($_GET['id'], $_POST['id_user'], $_POST['prenom'], $commentaire));
-
-                $erreur = 'Votre commentaire à bien été ajouté !';
-            }
-            else
-            {
-                $erreur = 'Veuillez remplir tous les champs!';
-            }
-        } 
-    }
-}
-?><?php
-require_once('inc/connec.php');
-require_once('inc/header.php'); 
-
-
 if(isset($_SESSION['id']) && !empty($_SESSION['id']))
 { 
     $reqmember = $bdd->prepare("SELECT * FROM membres WHERE id = ? ");
