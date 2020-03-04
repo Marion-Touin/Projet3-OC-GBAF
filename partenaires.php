@@ -29,50 +29,53 @@ if(isset($_SESSION['id']) && !empty($_SESSION['id']))
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Commentaires</title>
-    <link rel="stylesheet" href="style-css/partenaires.css" /> 
+        <title>Partenaires</title>
+        <link rel="stylesheet" href="style_css/part.css"/> 
     </head> 
     <body>
-<!-- affichage du titre et du contenu -->        
-<div >
-    <h2>
-        <img src="miniatures/<?= $donnees['id'] ?>.png" width="100" /> <br/>
-        <?php echo htmlspecialchars($donnees['titre']); ?>
-    </h2>
-    <p>
-    <?php
-    echo nl2br(htmlspecialchars($donnees['contenu']));
-    ?>
-    </p>
-</div>
+        <!-- affichage du titre et du contenu -->        
+        <div>
+            <h1>
+                <img class="logo" src="miniatures/<?= $donnees['id'] ?>.png" width="100" /> 
+            </h1>
+            <h2 class="partenaire">  
+                <?php echo htmlspecialchars($donnees['titre']); ?>
+            </h2>
+            <p class="description">
+            <?php
+            echo nl2br(htmlspecialchars($donnees['contenu']));
+            ?>
+            </p>
+        </div>
 
-<!-- like/dislike -->
-<div class="like">
-<a href="action.php?t=1like&id=<?= $_GET['id'] ?>"><img class="pouce" src="image/likes.png"> </a> (<?= $likes ?>)
-<a href="action.php?t=2dislike&id=<?= $_GET['id'] ?>"><img class="pouce" src="image/dislikes.png"> </a> (<?= $dislikes ?>)
-</div>
-<div>
-<button> <a href="commentaires.php"> Nouveau Commentaire </a> </button>
-</div> 
+        <!-- like/dislike -->
+        <div class="like">
+            <a href="action.php?t=1like&id=<?= $_GET['id'] ?>"><img class="pouce" src="image/likes.png"> </a> (<?=$likes ?>)
+            <a href="action.php?t=2dislike&id=<?= $_GET['id'] ?>"><img class="pouce" src="image/dislikes.png"> </a> (<?=$dislikes ?>)
+        </div>
+        <div class="bouton">
+            <button class="boutoncom"> <a href="commentaires.php?id=<?= $_GET['id']?>"> Nouveau Commentaire </a> </button> 
+        </div>
+        <h3>Commentaires</h3>
+        <?php
+        $req->closeCursor();
 
-<!-- commentaire -->
-<?php include 'commentaires.php' ?>
+        // Récupération des commentaires
+        $req = $bdd->prepare('SELECT id_article, id_user, prenom, commentaire, DATE_FORMAT(date_publi, \'%d/%m/%Y \') AS date_commentaire_fr FROM commentaires WHERE id_article = ? ORDER BY date_publi DESC');
+        $req->execute(array($_GET['id']));
 
-<?php
-$req->closeCursor();
+        while ($donnees = $req->fetch()) {
 
-// Récupération des commentaires
-$req = $bdd->prepare('SELECT id_article, prenom, commentaire, DATE_FORMAT(date_publi, \'%d/%m/%Y \') AS date_commentaire_fr FROM commentaires WHERE id_article = ? ORDER BY date_publi DESC');
-$req->execute(array($_GET['id']));
-
-while ($donnees = $req->fetch())
-{
-?>
-<p><strong><?php echo htmlspecialchars($donnees['prenom']); ?></strong> le <?php echo $donnees['date_commentaire_fr']; ?></p>
-<p><?php echo nl2br(htmlspecialchars($donnees['commentaire'])); ?></p>
-<?php
-} // Fin de la boucle des commentaires
-$req->closeCursor();
-?>
+        ?>
+        <div class="commentaire">
+            <p class="nom"><?php echo $donnees['prenom']; ?></p>
+            <p class="date">Le <?php echo $donnees['date_commentaire_fr']; ?> </p>
+            <p class="com"><?php echo $donnees['commentaire']; ?></p>
+        </div>
+        <?php
+        } // Fin de la boucle des commentaires
+        $req->closeCursor();
+        ?>
+<?php require_once('inc/footer.php'); ?>
 </body>
 </html>
