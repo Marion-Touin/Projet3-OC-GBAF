@@ -1,0 +1,68 @@
+/* Header */
+header
+{
+	background-color: #d1fdfd;
+	padding: 7px;
+	height: 30%;
+	padding-left: 60px;
+}
+
+.logo_gbaf
+{
+	float: left;
+	width: 15%;
+	height: 80%;
+	margin-top: 1%;
+}
+
+.img_profil
+{
+	width: 40px;
+	height: 40px;
+	marg
+ 
+}
+.deco
+{
+	font-size: 20px;
+	margin-left: 85%;
+}
+.membre
+{
+	font-size: 30px;
+	margin-left: 80%;
+	margin-top: 7%;
+}
+
+@media screen and (max-width: 1280px)
+{
+	header
+	{
+		background-color: #d1fdfd;
+		padding: 7px;
+		height: 270px;
+		padding-left: 60px;
+	}
+    .logo_gbaf
+	{
+		float: left;
+		width: 20%;
+		height: 70%;
+		margin-top: 50px;
+	}
+	.img_profil
+	{
+		width: 60px;
+		height: 60px;
+	}
+	.deco
+	{
+		font-size: 20px;
+		margin-left: 77%;
+	}
+	.membre
+	{
+		font-size: 30px;
+		margin: 15% 0% 0% 70%;
+	}
+}
